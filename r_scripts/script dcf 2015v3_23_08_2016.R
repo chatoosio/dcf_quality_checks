@@ -133,12 +133,15 @@ effort <- read.csv("input_data/effort.csv")
 names(effort) <- toupper(names(effort))
 
 # create a time stamp year-quarter for plotting
+# if Quarter = -1 label it in col
+effort$col <- NA
+effort$col <- ifelse(effort$QUARTER == -1, 1, 0)
+
 # if Quarter is = -1, convert to a mid year quarter => 2
 effort$QUARTER <- ifelse(effort$QUARTER == -1, 2 , effort$QUARTER)
-effort$QUARTER <- ifelse(effort$QUARTER <0, effort$QUARTER*-1,effort$QUARTER)
+#effort$QUARTER <- ifelse(effort$QUARTER <0, effort$QUARTER*-1,effort$QUARTER)
 
-# Remove Quarter = -1
-#effort
+
 
 
 effort$date <- paste(effort$YEAR, effort$QUARTER, "01", sep ="-" )
@@ -151,7 +154,7 @@ effort <- transform(effort, date = as.yearqtr(date))
 effort$gear2 <- paste(effort$VESSEL_LENGTH, effort$GEAR, effort$FISHERY, sep = "-")
 
 
-pE = ggplot(effort[effort$GEAR=="OTB",], aes(x=date, y = NOMINAL_EFFORT, col = gear2)) +
+pE = ggplot(effort[effort$GEAR=="OTB",], aes(x=date, y = NOMINAL_EFFORT, col = gear2, shape = factor(col))) +
    geom_line()+ geom_point()+
   facet_wrap(AREA ~ COUNTRY+GEAR , scales = "free_y") +
   scale_x_yearqtr(format = "%YQ%q")+
@@ -163,17 +166,17 @@ pE = ggplot(effort[effort$GEAR=="OTB",], aes(x=date, y = NOMINAL_EFFORT, col = g
 
 plotsE = dlply(effort , "GEAR", `%+%`, e1 = pE)
 mlE = do.call(marrangeGrob, list(grobs = plotsE, nrow=1, ncol=1))
-ggsave("DCFeffort_Area_Country_Gear_VL.pdf", mlE , width=18, height=12, dpi=300)
+ggsave("DCFeffort_Area_Country_Gear_VL_splitQUARTER.pdf", mlE , width=18, height=12, dpi=300)
 
 
 # Aggregated effort
-E1 <- ddply(effort[effort$NOMINAL_EFFORT>0,], .( date, COUNTRY, AREA, GEAR), summarize,
+E1 <- ddply(effort[effort$NOMINAL_EFFORT>0,], .( YEAR, COUNTRY, AREA, GEAR, col), summarize,
              sum_effort = sum(NOMINAL_EFFORT, na.rm = TRUE))
 
-E2 =  ggplot(E1, aes(x=date, y = sum_effort, col = AREA)) +
+E2 =  ggplot(E1, aes(x=YEAR, y = sum_effort, col = AREA, shape = factor(col))) +
   geom_line()+ geom_point()+
   facet_wrap(COUNTRY ~  AREA + GEAR, scales = "free_y") +
-scale_x_yearqtr(format = "%YQ%q")+
+#scale_x_yearqtr(format = "%YQ%q")+
   theme( axis.text.x = element_text(angle = 60, hjust = 1))+
   xlab("Year + Quarter")+ylab("Effort (Kw/Days)")
 
@@ -181,7 +184,10 @@ E2
 
 plots3 = dlply(E1 , "GEAR", `%+%`, e1 = E2)
 ml3 = do.call(marrangeGrob, list(grobs = plots3, nrow=1, ncol=1))
-ggsave("DCFeffort_Country_Area_Gear.pdf", ml3 , width=18, height=12, dpi=300)
+ggsave("DCFeffort_Country_Area_Gear_splitQuarter2.pdf", ml3 , width=18, height=12, dpi=300)
+
+
+
 
 # Compare Kw Days and Days at Sea
 
