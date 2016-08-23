@@ -1,23 +1,40 @@
+# R code to evaluate data quality and coverage from DCF Med and BS data
+# Authors: Giacomo Chato Osio and Alessandro Mannini
+# August 2016
+
+
+####################################################################### 
+# Functions to plot the time series of Catch, Landings and Effort 
+# Each table is plotted in two ways: 
+#                       1. one more disaggregated is by country+ area + gear + VL + species 
+#                       2. one aggregated at country+ area + gear + species
+# Quarters and Years are plotted with different symbols 
+#######################################################################
+
+
 library(plyr); library(dplyr); library(reshape2)
 library(ggplot2); library(zoo);library(gridExtra)
 
 setwd("S:/data call 2016/quality_checks_data_call_2016")
 
-# Catch @ Age Data
+
+
+
+#########################
+# Catch @ Age Data      #
+#########################
 
 catch <- read.csv("input_data/catches_new.csv")
 names(catch) <-toupper(names(catch))
 
-# fix areas
-#catch <- catch[catch$YEAR >1900 & !catch$AREA==-1,]
-#catch$AREA <- as.character(catch$AREA)
-#catch$AREA <- ifelse(catch$AREA == "16", "SA 16", catch$AREA)
-#catch$AREA <- ifelse(catch$AREA == "10", "SA 10", catch$AREA)
 
 # create a time stamp year-quarter for plotting
+# if Quarter = -1 label it in col
+catch$col <- NA
+catch$col <- ifelse(catch$QUARTER == -1, "Yr", "Qtr")
+
 # if Quarter is = -1, convert to a mid year quarter => 2
-catch$QUARTER <- ifelse(catch$QUARTER == -1, 2,catch$QUARTER)
-catch$QUARTER <- ifelse(catch$QUARTER <0, catch$QUARTER*-1,catch$QUARTER)
+catch$QUARTER <- ifelse(catch$QUARTER == -1, 2 , catch$QUARTER)
 
 catch$date <- paste(catch$YEAR, catch$QUARTER, "01", sep ="-" )
 
@@ -30,7 +47,7 @@ catch <- transform(catch, date = as.yearqtr(date))
 catch$gear2 <- paste(catch$VESSEL_LENGTH,  catch$GEAR, catch$FISHERY, sep = "-")
 
 
-p = ggplot(catch[catch$SPECIES=="HKE",], aes(x=date, y = LANDINGS, col = gear2)) +
+p = ggplot(catch[catch$SPECIES=="HKE",], aes(x=date, y = LANDINGS, col = gear2, shape = factor(col))) +
   geom_line()+ geom_point()+
   facet_wrap(AREA ~ COUNTRY+SPECIES , scales = "free_y") +
   scale_x_yearqtr(format = "%YQ%q")+
@@ -41,16 +58,16 @@ p = ggplot(catch[catch$SPECIES=="HKE",], aes(x=date, y = LANDINGS, col = gear2))
 #p 
 
 plots = dlply(catch , "SPECIES", `%+%`, e1 = p)
-ml = do.call(marrangeGrob, list(grobs=plots, nrow = 1, ncol = 2))
+ml = do.call(marrangeGrob, list(grobs=plots, nrow = 1, ncol = 1))
 ggsave("DCFCatch_Area_Country_Species_Gear_VL.pdf", ml , width=18, height=12, dpi=300)
 
 
 # Explore Trends by YEAR and SPECIES
 
-ct1 <- ddply(catch[catch$LANDINGS>0,], .( date, COUNTRY, AREA, SPECIES), summarize,
+ct1 <- ddply(catch[catch$LANDINGS>0,], .( YEAR, COUNTRY, AREA, SPECIES, col), summarize,
              Catch = sum(LANDINGS, na.rm = TRUE))
 
-p2 =  ggplot(ct1, aes(x=date, y = Catch, col = AREA)) +
+p2 =  ggplot(ct1, aes(x=YEAR, y = Catch, col = AREA, shape = factor(col))) +
       geom_line()+ geom_point()+
       facet_wrap(COUNTRY ~SPECIES, scales = "free_y")+ 
       scale_x_yearqtr(format = "%YQ%q")+
@@ -58,7 +75,7 @@ p2 =  ggplot(ct1, aes(x=date, y = Catch, col = AREA)) +
       xlab("Year")+ylab("Landings (t)")+
   scale_fill_brewer(palette="Spectral")
 
-p2 
+#p2 
 
 plots2 = dlply(ct1 , "SPECIES", `%+%`, e1 = p2)
 ml2 = do.call(marrangeGrob, list(grobs = plots2, nrow=1, ncol=1))
@@ -67,15 +84,24 @@ ggsave("DCFCatch_Area_Country_Species.pdf", ml2 , width=18, height=12, dpi=300)
 
 
 #=====================================================================================================
-# Explore Landings @ Lenght Data
+
+
+##########################################
+# Explore Landings @ Lenght Data        # # 
+##########################################
 
 landings <- read.csv("input_data/landings_new.csv")
 names(landings) <- toupper(names(landings))
 
 # create a time stamp year-quarter for plotting
+# if Quarter = -1 label it in col
+landings$col <- NA
+landings$col <- ifelse(landings$QUARTER == -1, "Yr", "Qtr")
+
 # if Quarter is = -1, convert to a mid year quarter => 2
-landings$QUARTER <- ifelse(landings$QUARTER == -1, 2,landings$QUARTER)
-landings$QUARTER <- ifelse(landings$QUARTER <0, landings$QUARTER*-1,landings$QUARTER)
+landings$QUARTER <- ifelse(landings$QUARTER == -1, 2 , landings$QUARTER)
+
+
 
 landings$date <- paste(landings$YEAR, landings$QUARTER, "01", sep ="-" )
 
@@ -88,7 +114,7 @@ landings <- transform(landings, date = as.yearqtr(date))
 landings$gear2 <- paste(landings$VESSEL_LENGTH, landings$GEAR, landings$FISHERY, sep = "-")
 
 
-pl = ggplot(landings[landings$SPECIES=="HKE",], aes(x=date, y = LANDINGS, col = gear2)) +
+pl = ggplot(landings[landings$SPECIES=="HKE",], aes(x=date, y = LANDINGS, col = gear2, shape = factor(col))) +
   #geom_line(aes(y=LANDINGS), col = "blue") + 
   geom_line()+ geom_point()+
   facet_wrap(AREA ~ COUNTRY+SPECIES , scales = "free_y") +
@@ -107,10 +133,10 @@ ggsave("DCFLandings_Species_Area_Gear_VL_Fishery.pdf", mlL , width=18, height=12
 
 # Explore Trends in Landings @ Length by YEAR and SPECIES
 
-lnd1 <- ddply(landings[landings$LANDINGS>0,], .( date, COUNTRY, AREA, SPECIES), summarize,
+lnd1 <- ddply(landings[landings$LANDINGS>0,], .( YEAR, COUNTRY, AREA, SPECIES, col), summarize,
               Catch = sum(LANDINGS, na.rm = TRUE))
 
-plnd =  ggplot(lnd1, aes(x=date, y = Catch, col = AREA)) +
+plnd =  ggplot(lnd1, aes(x = YEAR, y = Catch, col = AREA, shape = factor(col))) +
   geom_line()+ geom_point()+
   facet_wrap(COUNTRY ~SPECIES, scales = "free_y")+ 
   scale_x_yearqtr(format = "%YQ%q")+
