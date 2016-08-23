@@ -216,4 +216,200 @@ ggsave("DCFeffort_Country_Area_Gear_splitQuarter2.pdf", ml3 , width=18, height=1
 
 
 # Compare Kw Days and Days at Sea
+# Check numbers of Fishing Days 
+# Etc
+#===========================================================================================
+
+
+
+
+#################################################################################################
+# Check Data Coverage 
+#################################################################################################
+
+
+
+library(plyr); library(dplyr); library(reshape2)
+library(ggplot2)
+
+#setwd("S:/data coverage report 2016/dcf/dcf")
+#catch <- read.csv("catches_length.csv", sep=";")
+#names(catch) <- toupper(names(catch))
+
+
+# Get number of species reported by, however this might overestimate since a species is there
+# even when only landings are reported with no age structure
+c1 <- ddply(catch, .( YEAR, GEAR, MESH_SIZE_RANGE, AREA), summarize, N.species = length(unique(SPECIES)))
+c2 <- ddply(catch, .( YEAR, GEAR, AREA), summarize, N.species = length(unique(SPECIES)))
+c3 <- ddply(catch, .( YEAR, AREA), summarize, N.species_Catch = length(unique(SPECIES)))
+
+# Get real numbers reported at age
+nAGE<-ddply(catch[
+  catch$AGE0_NO_LANDED>0 | catch$AGE1_NO_LANDED>0 | catch$AGE2_NO_LANDED>0 | catch$AGE3_NO_LANDED>0 |  catch$AGE4_NO_LANDED>0| 
+  catch$AGE5_NO_LANDED>0 | catch$AGE6_NO_LANDED>0| catch$AGE7_NO_LANDED>0| catch$AGE8_NO_LANDED>0| catch$AGE9_NO_LANDED>0| catch$AGE10_NO_LANDED>0| 
+    catch$AGE11_NO_LANDED>0| catch$AGE12_NO_LANDED>0| catch$AGE13_NO_LANDED>0| catch$AGE14_NO_LANDED>0| catch$AGE15_NO_LANDED>0| catch$AGE16_NO_LANDED>0| 
+    catch$AGE17_NO_LANDED>0| catch$AGE18_NO_LANDED>0| 
+     catch$AGE19_NO_LANDED>0 | catch$AGE20_NO_LANDED>0 ,], .(COUNTRY, AREA, YEAR), summarize,  n.species_age=length(unique(as.character(SPECIES))), .drop = TRUE)
+
+
+nAGER<-reshape(nAGE, idvar=c("COUNTRY", "AREA"), timevar="YEAR", direction="wide")
+write.csv(nAGER, file="NumberAtAGETableACountSpecies.csv")
+
+
+
+#landings <- read.csv("C:/data call 2015/landingsITA.csv")
+#landings <- read.csv("landings_length.csv")
+#names(landings) <- toupper(names(landings))
+
+landings <- landings[landings$COUNTRY=="ITA",]
+
+l1 <- ddply(landings, .( YEAR, GEAR, MESH_SIZE_RANGE, AREA), summarize, N.species = length(unique(SPECIES)))
+l2 <- ddply(landings, .( YEAR, GEAR, AREA), summarize, N.species = length(unique(SPECIES)))
+l3 <- ddply(landings, .( YEAR, AREA), summarize, N.species_Landings = length(unique(SPECIES)))
+
+ddply(landings, .( YEAR, AREA), summarize, spe = identity(SPECIES))
+
+# Landings @ length, this is more tricky since there are many size classes 1-100+, so need a robust and defensible rule for selecting the relevant ones
+
+# FIX THIS TABLE TO INCLUDE ONLY >0 and ALL lenght columns, now some are missing
+
+landingslength<-ddply(
+  landings[
+      landings[,16]>=0 | landings[,17]>=0 | landings[,18]>=0 | landings[,19]>=0 |  landings[,20]>=0 |  landings[,21]>=0 | landings[,22]>=0 | landings[,23]>=0 | landings[,24]>=0 | landings[,25]>=0 | landings[,26]>=0 | landings[,27]>=0 | landings[,28]>=0 | landings[,29]>=0 | landings[,30]>=0 | landings[,31]>=0 | landings[,32]>=0 | landings[,33]>=0 | landings[,34]>=0 | landings[,35]>=0 | landings[,36]>=0 | landings[,37]>=0 | landings[,38]>=0 | landings[,39]>=0 | landings[,40]>=0 | landings[,41]>=0 | landings[,42]>=0 | landings[,43]>=0 | landings[,44]>=0 | landings[,45]>=0 | landings[,46]>=0 | landings[,47]>=0 | landings[,48]>=0 | landings[,49]>=0 | 
+      landings[,50]>=0 | landings[,51]>=0 | landings[,52]>=0 | landings[,53]>=0  | landings[,54]>=0 | landings[,55]>=0 | landings[,56]>=0 | landings[,57]>=0 | landings[,58]>=0 | landings[,59]>=0 |
+      landings[,60]>=0 | landings[,61]>=0 | landings[,62]>=0 | landings[,63]>=0  | landings[,64]>=0 | landings[,65]>=0 | landings[,66]>=0 | landings[,67]>=0 | landings[,68]>=0 | landings[,69]>=0 |
+      landings[,70]>=0 | landings[,71]>=0 | landings[,72]>=0 | landings[,73]>=0  | landings[,74]>=0 | landings[,75]>=0 | landings[,76]>=0 | landings[,77]>=0 | landings[,78]>=0 | landings[,79]>=0 |
+      landings[,80]>=0 | landings[,81]>=0 | landings[,82]>=0 | landings[,83]>=0  | landings[,84]>=0 | landings[,85]>=0 | landings[,86]>=0 | landings[,87]>=0 | landings[,88]>=0 | landings[,89]>=0 |
+      landings[,90]>=0 | landings[,91]>=0 | landings[,92]>=0 | landings[,93]>=0  | landings[,94]>=0 | landings[,95]>=0 | landings[,96]>=0 | landings[,97]>=0 | landings[,98]>=0 | landings[,99]>=0 | landings[,104]>=0 | landings[,105]>=0 | landings[,110]>=0
+    
+    ,] ,
+  .(COUNTRY, AREA, YEAR), summarize,  n.species_lenght=length(unique(as.character(SPECIES))), .drop = TRUE)
+
+landingslengthR<-reshape(landingslength, idvar=c("COUNTRY", "AREA"), timevar="YEAR", direction="wide")
+write.csv(landingslengthR, file="NumberofSpeciesLandingsAtLenght2.csv")
+
+# Combine table where at least one individual was reported either by lenght or by Age for a given speices
+landsAge_Lengh <- merge(nAGE , landingslength, all=TRUE)
+write.csv(landsAge_Lengh, file="NumberofSpeciesLandingsAtLenghtandAGE.csv")
+
+
+
+# look at the species specifically
+write.csv(table(landings$AREA,  landings$SPECIES), file="speciesFrequencyLandingsLength.csv")
+write.csv(table(catch$AREA,  catch$SPECIES), file="speciesFrequencyCatchAge.csv")
+
+
+# Check number of records with numbers of age reading in catch, landings and discards
+names(catch)
+write.csv(
+ddply(catch[catch$NO_AGE_MEASUREMENTS_LANDINGS>0 | catch$NO_AGE_MEASUREMENTS_DISCARDS>0 | 
+              catch$NO_AGE_MEASUREMENTS_CATCH>0,], .(COUNTRY, YEAR, AREA), summarize,
+      NO_AGE_MEASUREMENTS_LANDINGS = length(NO_AGE_MEASUREMENTS_LANDINGS), 
+      NO_AGE_MEASUREMENTS_DISCARDS = length(NO_AGE_MEASUREMENTS_DISCARDS), 
+      NO_AGE_MEASUREMENTS_CATCH    = length(NO_AGE_MEASUREMENTS_CATCH)),
+file = "num_age_measurmentITA.csv")
+
+
+#-------------------------------------------------------------------------------------------
+# Look at coverage in Fishing Effort Tables
+
+effort <- read.csv("effort.csv", sep=";")
+names(effort) <- toupper(effort)
+
+# Effort by gear, but very long table
+e1 <- ddply(effort, .( year, gear, country, area), summarize, effort = length(nominal_effort))
+effortR<-reshape(e1, idvar=c("country","area", "gear"), timevar="year", direction="wide")
+write.csv(effortR, file="effortDCF.csv")
+
+# Effort by country/area only, but very long table
+e2 <- ddply(effort, .( year,  country, area), summarize, effort = length(nominal_effort))
+effort2R<-reshape(e2, idvar=c("country","area"), timevar="year", direction="wide")
+write.csv(effort2R, file="effort2DCF.csv")
+
+#-------------------------------------------------------------------------------------------
+# Look at coverage in Discards Tables
+
+discards <- read.csv("discards_length.csv", sep=";")
+
+
+discardslength<-ddply(
+  discards[discards[,15]>=0 | 
+          discards[,16]>=0 |  discards[,17]>=0 | discards[,18]>=0 | discards[,19]>=0 |  discards[,20]>=0 |  discards[,21]>=0 | discards[,22]>=0 | discards[,23]>=0 | discards[,24]>=0 | discards[,25]>=0 | 
+          discards[,26]>=0 |  discards[,27]>=0 | discards[,28]>=0 | discards[,29]>=0 | discards[,30]>=0 | discards[,31]>=0 | discards[,32]>=0 | discards[,33]>=0 | discards[,34]>=0 | discards[,35]>=0 | 
+          discards[,36]>=0 |  discards[,37]>=0 | discards[,38]>=0 | discards[,39]>=0 | discards[,40]>=0 | discards[,41]>=0 | discards[,42]>=0 | discards[,43]>=0 | discards[,44]>=0 | discards[,45]>=0 | 
+          discards[,46]>=0 |  discards[,47]>=0 | discards[,48]>=0 | discards[,49]>=0 | 
+          discards[,50]>=0 |  discards[,51]>=0 | discards[,52]>=0 | discards[,53]>=0  | discards[,54]>=0 | discards[,55]>=0 | discards[,56]>=0 | discards[,57]>=0 | discards[,58]>=0 | discards[,59]>=0 |
+          discards[,60]>=0 |  discards[,61]>=0 | discards[,62]>=0 | discards[,63]>=0  | discards[,64]>=0 | discards[,65]>=0 | discards[,66]>=0 | discards[,67]>=0 | discards[,68]>=0 | discards[,69]>=0 |
+          discards[,70]>=0 |  discards[,71]>=0 | discards[,72]>=0 | discards[,73]>=0  | discards[,74]>=0 | discards[,75]>=0 | discards[,76]>=0 | discards[,77]>=0 | discards[,78]>=0 | discards[,79]>=0 |
+          discards[,80]>=0 |  discards[,81]>=0 | discards[,82]>=0 | discards[,83]>=0  | discards[,84]>=0 | discards[,85]>=0 | discards[,86]>=0 | discards[,87]>=0 | discards[,88]>=0 | discards[,89]>=0 |
+          discards[,90]>=0 |  discards[,91]>=0 | discards[,92]>=0 | discards[,93]>=0  | discards[,94]>=0 | discards[,95]>=0 | discards[,96]>=0 | discards[,97]>=0 | discards[,98]>=0 | discards[,99]>=0 | 
+          discards[,100]>=0 | discards[,101]>=0 | discards[,102]>=0 | discards[,103]>=0 | discards[,104]>=0 | discards[,105]>=0 | discards[,110]>=0 ,],
+     #     discards[,111]>=0 | discards[,112]>=0 | discards[,113]>=0 | discards[,114]>=0  | discards[,115]>=0 ,] ,
+.(country, area,  year), summarize,  n.species_lenght=length(unique(as.character(species))), .drop = TRUE)
+
+discardslengthR<-reshape(discardslength, idvar=c("country","area"), timevar="year", direction="wide")
+write.csv(discardslengthR, file="discardslengthDCF.csv")
+
+discardslength<-ddply(
+  discards[discards[,15]>0 | 
+          discards[,16]>0 |  discards[,17]>0 | discards[,18]>0 | discards[,19]>0 |  discards[,20]>0 |  discards[,21]>0 | discards[,22]>0 | discards[,23]>0 | discards[,24]>0 | discards[,25]>0 | 
+          discards[,26]>0 |  discards[,27]>0 | discards[,28]>0 | discards[,29]>0 | discards[,30]>0 | discards[,31]>0 | discards[,32]>0 | discards[,33]>0 | discards[,34]>0 | discards[,35]>0 | 
+          discards[,36]>0 |  discards[,37]>0 | discards[,38]>0 | discards[,39]>0 | discards[,40]>0 | discards[,41]>0 | discards[,42]>0 | discards[,43]>0 | discards[,44]>0 | discards[,45]>0 | 
+          discards[,46]>0 |  discards[,47]>0 | discards[,48]>0 | discards[,49]>0 | 
+          discards[,50]>0 |  discards[,51]>0 | discards[,52]>0 | discards[,53]>0  | discards[,54]>0 | discards[,55]>0 | discards[,56]>0 | discards[,57]>0 | discards[,58]>0 | discards[,59]>0 |
+          discards[,60]>0 |  discards[,61]>0 | discards[,62]>0 | discards[,63]>0  | discards[,64]>0 | discards[,65]>0 | discards[,66]>0 | discards[,67]>0 | discards[,68]>0 | discards[,69]>0 |
+          discards[,70]>0 |  discards[,71]>0 | discards[,72]>0 | discards[,73]>0  | discards[,74]>0 | discards[,75]>0 | discards[,76]>0 | discards[,77]>0 | discards[,78]>0 | discards[,79]>0 |
+          discards[,80]>0 |  discards[,81]>0 | discards[,82]>0 | discards[,83]>0  | discards[,84]>0 | discards[,85]>0 | discards[,86]>0 | discards[,87]>0 | discards[,88]>0 | discards[,89]>0 |
+          discards[,90]>0 |  discards[,91]>0 | discards[,92]>0 | discards[,93]>0  | discards[,94]>0 | discards[,95]>0 | discards[,96]>0 | discards[,97]>0 | discards[,98]>0 | discards[,99]>0 | 
+          discards[,100]>0 | discards[,101]>0 | discards[,102]>0 | discards[,103]>0 | discards[,104]>0 | discards[,105]>0 | discards[,110]>0 ,],
+     #     discards[,111]>0 | discards[,112]>0 | discards[,113]>0 | discards[,114]>0  | discards[,115]>0 ,] ,
+.(country, area,  year), summarize,  n.species_lenght=length(unique(as.character(species))), .drop = TRUE)
+
+discardslengthR<-reshape(discardslength, idvar=c("country","area"), timevar="year", direction="wide")
+write.csv(discardslengthR, file="discardslengthDCF2.csv")
+
+
+#######################################################################################################################
+# Look at biological parameters Tables
+
+# GP
+gp <- read.csv("gp.csv", sep=";")
+gp1 <- ddply(gp[gp$vb_linf > 0 ,], .( end_year, country, area), summarize, VBPar = length(vb_linf))
+gpR<-reshape(gp1, idvar=c("country","area"), timevar="end_year", direction="wide")
+write.csv(gpR, file="gpDCF.csv")
+
+# MA
+ma <- read.csv("ma.csv", sep=";")
+ma1 <- ddply(ma[ma$prm >= 0 ,], .( end_year, country, area), summarize, 
+             Num_Spec_prm = length(unique(as.character(species))))
+maR<-reshape(gp1, idvar=c("country","area"), timevar="end_year", direction="wide")
+write.csv(maR, file="maDCF.csv")
+
+# ML
+ml <- read.csv("ml.csv", sep=";")
+ml1 <- ddply(ml[ml$prm >= 0 ,], .( end_year, country, area), summarize, 
+             Num_Spec_prm = length (unique(as.character(species))))
+mlR<-reshape(ml1, idvar=c("country","area"), timevar="end_year", direction="wide")
+write.csv(mlR, file="mlDCF.csv")
+
+# SRL
+srl <- read.csv("srl.csv", sep=";")
+srl1 <- ddply(srl[srl$sexratio >= 0 ,], .( end_year, country, area), summarize, 
+             Num_Spec_sexrat = length (unique(as.character(species))))
+srlR<-reshape(srl1, idvar=c("country","area"), timevar="end_year", direction="wide")
+write.csv(srlR, file="srlDCF.csv")
+
+# SRA
+sra <- read.csv("sra.csv", sep=";")
+sra1 <- ddply(sra[sra$sexratio >= 0 ,], .( end_year, country, area), summarize, 
+             Num_Spec_sexra = length (unique(as.character(species))))
+sraR<-reshape(sra1, idvar=c("country","area"), timevar="end_year", direction="wide")
+write.csv(sraR, file="sraDCF.csv")
+
+
+
+
+
+
+
 
