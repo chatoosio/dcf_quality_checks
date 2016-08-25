@@ -511,6 +511,8 @@ abu2 <- ggplot(abundance2, aes(year, abund, color = species)) + geom_point()+
 ggsave(abu2, file=paste("abundance_from_ABUNDANCEatLenght",Sys.Date(),".png"), width=12, height=8, dpi=300)
 
 
+# look at coverage in biomass
+biomass2 <- ddply(biomass, .(country, area, year), summarize, N_spec = length(unique(as.character(species))))
 
 
 
