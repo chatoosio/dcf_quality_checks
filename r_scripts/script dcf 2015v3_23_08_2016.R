@@ -391,9 +391,134 @@ discardslengthR<-reshape(discardslength, idvar=c("country","area"), timevar="yea
 write.csv(discardslengthR, file="discardslengthDCF2.csv")
 
 
+
+
+
+
+
+
+##############################################################################################################
+# Checks on Acoustic survey data
+##############################################################################################################
+
+
+# Load files
+abund_biom <- read.csv("input_data/abund_biom.csv", sep=",")
+
+# fix area miscoding in some areas  from 2014 call
+#abund_biom$area <- as.character (abund_biom$area)
+#abund_biom$area <- ifelse(abund_biom$area == "SA16", "SA 16", abund_biom$area)
+#abund_biom$area <- ifelse(abund_biom$area == "SA17", "SA 17", abund_biom$area)
+#abund_biom$area <- ifelse(abund_biom$area == "SA18", "SA 18", abund_biom$area)
+
+# remove ROM and BUL since not affected by this call
+#abund_biom <- abund_biom[!(abund_biom$country=="ROM" | abund_biom$country=="BUL"),]
+
+# Plot the survey timing
+
+timing <- ggplot(abund_biom, aes(year, end_month))+geom_point(aes(color = "blue", shape = "b"))+
+  geom_point(aes(year, start_month, color = "red"))+facet_wrap(area~country)+ylab("Month of the Year")+
+  theme(legend.position="none")
+
+ ggsave(timing, file=paste("AcousticSurveyTiming",Sys.Date(),".png"), width=12, height=8, dpi=300)
+
+
+# Aggregate by species over sex
+
+abund_biom <- abund_biom[2:24] # To remove empty columns with ages > 8
+
+
+# aggregate over age classes
+
+abund_biomL <- (melt(abund_biom, id.vars=c("country", "area", "species", "sex", "year", "name_survey")))
+
+# split abund from biomass
+abund_biomL$var <- grepl("abund", abund_biomL$variable)
+abund_biomL$vars <- ifelse(abund_biomL$var == TRUE, "abund", "biomass")
+
+
+##########################################################################################################
+# In SA 1 and SA 6 it is evident that the in 2012 and 2013 the numbers at age have been provided in actual numbers rather than thousands as 
+# specified in the Data Call, thus scale it /1000
+
+abund_biomL$value <- ifelse(abund_biomL$area == "SA 6" & (abund_biomL$year == 2012 | abund_biomL$year == 2013) &
+                              abund_biomL$vars == "abund", abund_biomL$value / 1000 , abund_biomL$value)
+abund_biomL$value <- ifelse( abund_biomL$area == "SA 1" & abund_biomL$year == 2012  & abund_biomL$vars == "abund" , 
+                             abund_biomL$value / 1000 , abund_biomL$value)
+
+# Fix data from SA 16, e.g. data pre 2012 were not reported in thousands, while the data since 2012 is in thousands
+abund_biomL$value <- ifelse(abund_biomL$area == "SA 16" & abund_biomL$year <2012 & abund_biomL$vars == "abund" ,
+                            abund_biomL$value / 1000 , abund_biomL$value)
+
+# Need the same as in 16 in SA 15?
+
+###########################################################################################################
+
+temp <- ddply(abund_biomL, .(country, area, year, vars, species), summarize, value2 = sum(value, na.rm= T))
+
+# Plot Abundance
+ab <- ggplot(temp[temp$vars=="abund",], aes(year, value2, color = species))+geom_point()+
+  facet_wrap(country~area, scales = "free_y")+geom_line()+ylab("Abundance, in Thousands")+
+  xlim(2000,2016)
+      ggsave(ab, file=paste("CORRECTEDAcousticAbundanceDCF",Sys.Date(),".png"), width=12, height=8, dpi=300)
+
+
+# Plot Biomass
+bio <- ggplot(temp[temp$vars=="biomass",], aes(year, value2, color = species))+geom_point()+
+  facet_wrap(country~area, scales="free_y")+geom_line()+ylab("Biomass, in Tons")+
+  xlim(2000,2016)
+      ggsave(bio, file=paste("CORRECTEDAcousticBiomassDCF",Sys.Date(),".png"), width=12, height=8, dpi=300)
+      
+
+      
+      
+##########################################################################      
+# EXplore Biomass Tables
+#########################################################################
+      
+biomass <- read.csv("input_data/biomass.csv") 
+
+
+
+###################################################################################################################
+# EXPLORE Numbers @ Age by survey
+###################################################################################################################
+
+# Sum over SEX
+temp_age <- ddply(abund_biomL, .(country, area, year, vars, variable, species), summarize, value2 = sum(value, na.rm= T))
+   
+cbbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7", "#999999")
+
+# Plot Abundance
+abund_age <- ggplot(temp_age[temp_age$vars=="abund" &  temp_age$value2 >0 & temp_age$country == "GRC",], aes(year, value2))+
+  geom_point(aes(color = variable))+
+  facet_wrap(species ~ area+country, scales= "free_y")+geom_line(aes(color = variable)) + 
+   scale_colour_manual(values=cbbPalette) +ylab("Abundance, in Thousands")
+      
+ggsave(abund_age, file=paste("UNCORRECTEDAcousticAbundanceDCF@Age",Sys.Date(),".png"), width=10, height=10, dpi=300)
+      
+      
+      
+      
+
+biomass_age <- ggplot(temp_age[temp_age$vars=="biomass"&  temp_age$value2 >0 & temp_age$country == "GRC",], aes(year, value2))+
+  geom_point(aes(color = variable))+
+  facet_wrap(species ~ area+country, scales= "free_y")+geom_line(aes(color = variable)) + 
+   scale_colour_manual(values=cbbPalette) +ylab("Biomass, Tons")
+      
+ggsave(biomass_age, file=paste("UNCORRECTEDAcousticBiomassDCF@Age",Sys.Date(),".png"), width=10, height=10, dpi=300)
+
+
+
+
+
+
+
+
+
 #######################################################################################################################
 # Look at biological parameters Tables
-
+#################################################################################################################
 # GP
 gp <- read.csv("gp.csv", sep=";")
 gp1 <- ddply(gp[gp$vb_linf > 0 ,], .( end_year, country, area), summarize, VBPar = length(vb_linf))
@@ -431,6 +556,51 @@ write.csv(sraR, file="sraDCF.csv")
 
 
 
+
+
+
+############################################################################################################
+# MEDITS CHECKS
+############################################################################################################
+
+library(ggplot2)
+library(plyr)
+
+ta <- read.csv("S:/data coverage report 2016/dcf/medits/ta.csv", sep=";")
+TA <- ta
+rm(ta)
+names(TA) <- toupper(names(TA))
+ggplot(ddply(TA, .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), 
+       aes(x=YEAR, y=AREA, col=factor(AREA ))) + geom_point() + 
+        facet_grid( MONTH ~ COUNTRY)+ ylab("Month")
+
+ggplot(ddply(TA[TA$COUNTRY=="ITA" | TA$COUNTRY=="GRC" , ], .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), aes(x=YEAR, y=AREA, col=factor(AREA )))+
+  geom_point()+facet_grid(MONTH ~ COUNTRY + AREA) + ylab("Month")
+
+# All countries
+ggplot(ddply(TA, .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), 
+       aes(x=YEAR, y=MONTH))+geom_path()+geom_point()+stat_smooth( se = FALSE)+
+  facet_wrap(AREA~COUNTRY)+
+  scale_y_continuous(breaks=c(1,2,3, 4, 5, 6,7,8, 9, 10, 11,12))+
+  geom_hline(yintercept=6, colour="red", linetype = "longdash", size =1)+  ylim(4,12)
+
+ggsave(last_plot(), file="Meditstiming2.png", width=12, height=8)
+
+ggplot(ddply(TA[TA$COUNTRY == "ITA",], .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), 
+       aes(x=YEAR, y=MONTH))+geom_path()+stat_smooth( se = FALSE)+
+  facet_grid(~AREA, labeller = "label_both")+
+  scale_y_continuous(breaks=c(1,2,3, 4, 5, 6,7,8, 9, 10, 11,12))+
+  geom_hline(yintercept=6, colour="red", linetype = "longdash", size =1)
+
+
+
+
+# Number of tows per year
+
+ggplot(ddply(TA, .(YEAR, COUNTRY, AREA), summarize, num = length(HAUL_NUMBER)), 
+       aes(x=YEAR, y=num))+geom_path()+ #stat_smooth(method="lm", se = FALSE)+
+  facet_wrap(COUNTRY ~ AREA)+ ylab("Number of Tows")
+ggsave(last_plot(), file="MeditsNumTows.png", width=12, height=8)
 
 
 
