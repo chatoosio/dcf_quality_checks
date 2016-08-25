@@ -212,6 +212,18 @@ plots3 = dlply(E1 , "GEAR", `%+%`, e1 = E2)
 ml3 = do.call(marrangeGrob, list(grobs = plots3, nrow=1, ncol=1))
 ggsave("DCFeffort_Country_Area_Gear_splitQuarter2.pdf", ml3 , width=18, height=12, dpi=300)
 
+E3 =  ggplot(E1, aes(x=YEAR, y = sum_effort, col = AREA, shape = factor(col))) +
+  geom_line()+ geom_point()+
+  facet_wrap(COUNTRY ~  AREA + GEAR) +
+#scale_x_yearqtr(format = "%YQ%q")+
+  theme( axis.text.x = element_text(angle = 60, hjust = 1))+
+  xlab("Year + Quarter")+ylab("Effort (Kw/Days)")
+
+E3 
+
+plots4 = dlply(E1 , "GEAR", `%+%`, e1 = E3)
+ml4 = do.call(marrangeGrob, list(grobs = plots4, nrow=1, ncol=1))
+ggsave("DCFeffort_Country_Area_Gear_splitQuarter2_fixscales.pdf", ml4 , width=18, height=12, dpi=300)
 
 
 
@@ -288,6 +300,12 @@ landingslength<-ddply(
 landingslengthR<-reshape(landingslength, idvar=c("COUNTRY", "AREA"), timevar="YEAR", direction="wide")
 write.csv(landingslengthR, file="NumberofSpeciesLandingsAtLenght2.csv")
 
+# plot time series of species with landings @ lenght
+land_spe <- ggplot(landingslength, aes(YEAR, n.species_lenght, col = AREA))+geom_point()+geom_line()+facet_grid(COUNTRY~.)
+ggsave(land_spe, file=paste("DCF_NumbSpe_Landed",Sys.Date(),".png"), width=10, height=10, dpi=300)
+
+
+
 # Combine table where at least one individual was reported either by lenght or by Age for a given speices
 landsAge_Lengh <- merge(nAGE , landingslength, all=TRUE)
 write.csv(landsAge_Lengh, file="NumberofSpeciesLandingsAtLenghtandAGE.csv")
@@ -314,11 +332,15 @@ file = "num_age_measurmentITA.csv")
 # Look at coverage in Fishing Effort Tables
 
 effort <- read.csv("effort.csv", sep=";")
-names(effort) <- toupper(effort)
+names(effort) <- tolower(effort)
 
 # Effort by gear, but very long table
-e1 <- ddply(effort, .( year, gear, country, area), summarize, effort = length(nominal_effort))
-effortR<-reshape(e1, idvar=c("country","area", "gear"), timevar="year", direction="wide")
+e1 <- ddply(effort, .( year, gear, country, area), summarize, 
+            effortKW = length(nominal_effort) 
+            #effortDaysSea = length(days_at_sea),
+            #effortFishingdays = length(fishing_days)
+            )
+effortR <- reshape(e1, idvar=c("country","area", "gear"), timevar="year", direction="wide")
 write.csv(effortR, file="effortDCF.csv")
 
 # Effort by country/area only, but very long table
@@ -329,7 +351,7 @@ write.csv(effort2R, file="effort2DCF.csv")
 #-------------------------------------------------------------------------------------------
 # Look at coverage in Discards Tables
 
-discards <- read.csv("discards_length.csv", sep=";")
+discards <- read.csv("input_data/discards_new.csv", sep=",")
 
 
 discardslength<-ddply(
