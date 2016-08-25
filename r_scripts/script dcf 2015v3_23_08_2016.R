@@ -478,6 +478,40 @@ bio <- ggplot(temp[temp$vars=="biomass",], aes(year, value2, color = species))+g
       
 biomass <- read.csv("input_data/biomass.csv") 
 
+biomass$biom <- rowSums(biomass[,13:113], na.rm = TRUE)
+
+# aggregate over Sex 
+biomass2 <- ddply(biomass, .(country, area, year, species), summarize, biom = sum(biom, na.rm= T))
+
+bio2 <- ggplot(biomass2, aes(year, biom, color = species)) + geom_point()+
+  facet_wrap(country~area, scales="free_y")+geom_line()+ylab("Biomass, in Tons")+
+  xlim(2000,2016)
+
+ggsave(bio2, file=paste("Abundance_ABUNDANCEatLenght",Sys.Date(),".png"), width=12, height=8, dpi=300)
+
+
+# look at coverage in biomass
+biomass2 <- ddply(biomass, .(country, area, year), summarize, N_spec = length(unique(as.character(species))))
+
+
+
+###################
+# Explore covarage and trends from ABUNDANCE@length  table
+
+abundance <- read.csv("input_data/abundance.csv")
+abundance$abund <- rowSums(abundance[,13:113], na.rm = TRUE)
+
+# aggregate over Sex 
+abundance2 <- ddply(abundance, .(country, area, year, species), summarize, abund = sum(abund, na.rm= T))
+
+abu2 <- ggplot(abundance2, aes(year, abund, color = species)) + geom_point()+
+  facet_wrap(country~area, scales="free_y")+geom_line()+ylab("abundance, in Thousands")+
+  xlim(2000,2016)
+
+ggsave(abu2, file=paste("abundance_from_ABUNDANCEatLenght",Sys.Date(),".png"), width=12, height=8, dpi=300)
+
+
+
 
 
 ###################################################################################################################
