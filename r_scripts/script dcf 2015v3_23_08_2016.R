@@ -669,4 +669,7 @@ write.csv(SP, file = "number_SPECIES_medits_tb_tc.csv")
 ggplot(SP, aes(x=YEAR, y=Num_species_TB))+geom_path()+ #stat_smooth(method="lm", se = FALSE)+
   facet_wrap(COUNTRY ~ AREA)+ ylab("Number of Tows")
 
+ggplot(SP)+geom_path(aes(x=YEAR, y=Num_species_TB, col = "blue"))+geom_path(aes(x=YEAR, y=Num_species_TC, col = "red"))+ #stat_smooth(method="lm", se = FALSE)+
+  facet_wrap(COUNTRY ~ AREA)+ ylab("Number of Species")
+
 
