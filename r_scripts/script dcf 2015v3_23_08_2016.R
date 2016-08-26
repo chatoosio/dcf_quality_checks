@@ -599,16 +599,27 @@ write.csv(sraR, file="sraDCF.csv")
 # MEDITS CHECKS
 ############################################################################################################
 
-library(ggplot2)
-library(plyr)
+library(ggplot2); library(plyr)
 
-ta <- read.csv("S:/data coverage report 2016/dcf/medits/ta.csv", sep=";")
-TA <- ta
-rm(ta)
+setwd("E:/quality_checks_data_call_2016")
+TA <- read.csv("input_data/medits_ta.csv", sep=",")
+TB <- read.csv("input_data/medits_tb.csv", sep=",")
+TC <- read.csv("input_data/medits_tc.csv", sep=",")
+
+
 names(TA) <- toupper(names(TA))
+names(TB) <- toupper(names(TB))
+names(TC) <- toupper(names(TC))
+
+# plot number of hauls performed per month
 ggplot(ddply(TA, .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), 
-       aes(x=YEAR, y=AREA, col=factor(AREA ))) + geom_point() + 
-        facet_grid( MONTH ~ COUNTRY)+ ylab("Month")
+       aes(x=YEAR, y=AREA, col=factor(AREA ))) + geom_point() + geom_line()+ 
+        facet_wrap( MONTH ~ COUNTRY)+ ylab("Month")
+
+ggplot(ddply(TA, .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), 
+       aes(x=YEAR, y=num, col=factor(MONTH ))) + geom_point() +# geom_line()+ 
+  facet_wrap( COUNTRY~ AREA)+ ylab("Month")
+
 
 ggplot(ddply(TA[TA$COUNTRY=="ITA" | TA$COUNTRY=="GRC" , ], .(YEAR, COUNTRY, AREA, MONTH), summarize, num = length(HAUL_NUMBER)), aes(x=YEAR, y=AREA, col=factor(AREA )))+
   geom_point()+facet_grid(MONTH ~ COUNTRY + AREA) + ylab("Month")
@@ -631,13 +642,31 @@ ggplot(ddply(TA[TA$COUNTRY == "ITA",], .(YEAR, COUNTRY, AREA, MONTH), summarize,
 
 
 
-# Number of tows per year
+# Number of tows per year in TA
+
+towta <- ddply(TA, .(YEAR, COUNTRY, AREA), summarize, num = length(unique(HAUL_NUMBER)))
+towtb <- ddply(TB, .(YEAR, COUNTRY, AREA), summarize, num = length(unique(HAUL_NUMBER)))
+towtc <- ddply(TC, .(YEAR, COUNTRY, AREA), summarize, num = length(unique(HAUL_NUMBER)))
+
+tow <-merge(towta, towtb, by=c("YEAR", "COUNTRY", "AREA"), all.x = TRUE)
+tow <-merge(tow, towtc, by=c("YEAR", "COUNTRY", "AREA"), all.x = TRUE)
+write.csv(tow, file = "number_hauls_medits_ta_tb_tc.csv")
 
 ggplot(ddply(TA, .(YEAR, COUNTRY, AREA), summarize, num = length(HAUL_NUMBER)), 
        aes(x=YEAR, y=num))+geom_path()+ #stat_smooth(method="lm", se = FALSE)+
   facet_wrap(COUNTRY ~ AREA)+ ylab("Number of Tows")
 ggsave(last_plot(), file="MeditsNumTows.png", width=12, height=8)
 
+# Number of SPECIES per year in TB AND TC
+ 
+SPtb <- ddply(TB, .(YEAR, COUNTRY, AREA), summarize, num = length(unique(SPECIES)))
+SPtc <- ddply(TC, .(YEAR, COUNTRY, AREA), summarize, num = length(unique(SPECIES)))
 
+SP <-merge(SPtb, SPtc, by=c("YEAR", "COUNTRY", "AREA"), all = TRUE)
+names(SP)[4:5] <-c("Num_species_TB", "Num_species_TC")
+write.csv(SP, file = "number_SPECIES_medits_tb_tc.csv")
+
+ggplot(SP, aes(x=YEAR, y=Num_species_TB))+geom_path()+ #stat_smooth(method="lm", se = FALSE)+
+  facet_wrap(COUNTRY ~ AREA)+ ylab("Number of Tows")
 
 
