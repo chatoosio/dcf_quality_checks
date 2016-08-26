@@ -1,0 +1,221 @@
+check_name,comment,country,area,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,CYP,25,0,0,0,0,0,0,0,0,0,0,0,4,25,25,27,27,27,26,26,4,0,4
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ESP,1,8,9,12,10,12,12,12,13,13,15,13,11,19,13,9,9,6,7,7,10,13,15
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ESP,5,0,2,2,1,2,2,0,2,2,0,2,2,0,14,45,11,8,10,8,7,13,11
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ESP,6,7,11,11,8,4,10,7,8,7,11,11,8,12,9,8,9,7,7,8,8,9,12
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,FRA,7,2,4,0,5,4,4,5,4,2,4,4,4,3,4,1,4,5,5,5,4,6,6
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,FRA,8,0,5,4,4,4,5,4,5,0,4,5,5,4,5,4,3,4,4,3,3,3,2
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,0
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ITA,10,28,0,1,1,0,1,0,0,0,0,0,0,0,1,2,1,0,23,0,23,23,23
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ITA,11,23,0,0,0,0,0,0,0,0,0,0,14,0,0,0,0,0,0,0,0,0,23
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ITA,16,10,14,14,13,14,14,14,14,20,20,19,32,33,38,38,38,38,38,39,38,7,39
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ITA,17,0,0,0,0,0,0,0,0,1,76,118,0,1,1,0,0,31,0,0,0,0,0
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ITA,18,10,10,19,19,19,18,19,19,14,14,13,14,14,14,11,14,14,14,0,14,14,14
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,ITA,9,33,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,19,21,22
+rome_bridles_len_mean_depth_ta_o,Check if the value of bridles length is consistent according to the mean depth,MLT,15,0,0,0,0,0,0,0,0,0,0,0,17,16,17,17,15,15,16,13,15,15,15
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),CYP,25,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,1
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ESP,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,1,0,0,0,0,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ESP,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ESP,6,0,0,1,0,0,0,0,0,0,0,0,0,0,3,1,5,1,1,2,0,1,2
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),FRA,7,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),GRC,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,3,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ITA,10,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ITA,11,0,0,2,0,2,0,2,0,0,0,1,1,1,0,1,0,0,0,0,0,0,1
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ITA,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ITA,18,2,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),ITA,9,0,0,0,0,0,0,0,1,2,2,0,2,0,1,1,2,2,0,0,3,0,0
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1
+rome_check_haul_coord_distance_ta_o,Check consistency of the hauls coordinates with the distance (adjusted to 100% difference),SVN,17,0,0,0,0,0,0,0,0,2,2,1,0,0,0,0,0,0,0,0,0,0,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,CYP,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,FRA,7,6,1,3,0,2,1,0,0,0,1,1,0,0,0,0,0,1,0,12,7,2,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,FRA,8,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,1,0,4,5,1,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,36,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,ITA,11,1,6,3,4,9,1,1,6,0,1,4,3,4,6,4,4,1,2,5,2,0,1
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,ITA,16,0,0,0,0,0,0,0,0,0,0,5,11,8,5,7,6,5,5,5,6,7,12
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,ITA,9,0,0,0,0,0,0,0,0,0,0,0,0,1,6,1,1,2,0,0,0,0,0
+rome_consistency_wght_frac_tc_tot_wght_tb_o,Check consistency between WEIGHT_OF_THE_FRACTION in TC and TOTAL_WEIGHT_IN_HAUL in TB,MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,1,7,0,0
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,FRA,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,44,57,41,51
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,FRA,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,11,14,12
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,29,42,42,28,32
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,11,0,0,0,0,0,0,0,0,7,5,3,1,0,0,0,0,0,0,40,73,68,56
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,28,57,50,0,0,0,0
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,67
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,17,2,59,54,56
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,19,0,0,0,0,0,0,0,0,0,0,1,0,0,0,3,1,0,0,36,11,21,31
+rome_consistency_zero_weight_tot_number_tb_o,Check consistency between not null weight and not null total number,ITA,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,18
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,CYP,25,0,0,0,0,0,0,0,0,0,0,0,0,2,0,2,0,0,0,0,0,0,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ESP,1,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,1,1,4
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ESP,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ESP,6,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,FRA,7,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,FRA,8,0,1,1,1,0,0,0,0,0,0,0,2,0,1,0,0,0,0,0,1,1,1
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,10,5,3,7,4,8,6,5,5,1,2,1,3,0,0,0,1,0,1,2,2,0,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,11,0,4,2,0,0,0,0,0,2,0,2,0,2,3,3,4,1,5,2,2,2,4
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,16,2,1,1,0,1,1,2,2,2,3,2,2,3,3,7,7,10,10,4,4,0,2
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,17,0,0,0,0,0,0,0,0,2,0,1,2,4,2,0,2,1,3,2,1,2,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,18,0,0,1,1,0,0,3,4,2,3,2,0,1,1,1,2,0,1,0,2,0,2
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,19,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,ITA,9,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,2,1,1
+rome_diff_start_depth_hauling_depth_ta_o,Check if that difference between start depth and end depth is not greater than 20%,MLT,15,0,0,0,0,0,0,0,0,0,0,0,1,1,0,2,3,1,2,5,2,1,1
+rome_duration_consistency_ta_o,Check consistency among duration start time and end time of the haul in TA,ESP,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_duration_consistency_ta_o,Check consistency among duration start time and end time of the haul in TA,ITA,11,0,0,0,0,0,0,0,0,0,1,0,97,1,0,0,0,0,0,0,0,0,7
+rome_duration_consistency_ta_o,Check consistency among duration start time and end time of the haul in TA,SVN,17,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),CYP,25,0,0,0,0,0,0,0,0,0,0,0,1,1,2,0,1,0,2,0,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ESP,1,5,0,2,6,10,6,7,7,2,7,0,0,1,0,0,3,1,0,1,0,2,2
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ESP,5,0,0,1,2,2,1,0,1,0,0,0,0,0,0,1,2,1,1,1,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ESP,6,15,3,0,6,19,7,8,4,4,3,2,0,1,1,0,1,1,2,5,1,2,3
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),FRA,7,7,0,2,10,4,0,0,1,2,0,1,1,0,0,2,0,0,1,0,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),FRA,8,2,2,0,2,0,2,2,1,0,0,0,0,1,0,0,1,1,0,0,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,10,17,0,1,0,0,1,0,1,1,3,3,0,0,0,1,2,3,1,0,2,0,1
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,11,21,36,41,4,46,39,1,6,1,1,13,62,53,40,59,57,51,46,49,0,9,21
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,16,7,1,0,0,3,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,17,0,0,0,0,0,0,0,0,11,6,2,9,10,29,1,1,0,0,0,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,18,2,1,0,0,2,0,0,0,1,2,0,0,1,1,2,1,2,1,0,1,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,19,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),ITA,9,54,42,19,22,18,50,7,5,1,0,22,2,2,2,0,1,3,0,1,0,0,3
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,2,1,0,9,0,43,17
+rome_duration_distance_consistency_ta_o,Check between duration of the haul and distance (tolerance of 15%),SVN,17,0,0,0,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2
+rome_hauls_from_ta_in_tb_o,Check if all the hauls in TA are in TB,ESP,1,26,27,33,33,32,39,38,38,44,47,43,38,50,45,40,39,25,28,31,39,52,61
+rome_hauls_from_ta_in_tb_o,Check if all the hauls in TA are in TB,ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,7,7
+rome_hauls_from_ta_in_tb_o,Check if all the hauls in TA are in TB,ESP,5,0,4,4,3,4,4,0,8,4,0,5,4,5,55,55,55,50,54,52,52,57,56
+rome_hauls_from_ta_in_tb_o,Check if all the hauls in TA are in TB,ESP,6,52,74,68,64,56,73,73,77,86,92,80,81,89,64,77,75,53,78,89,97,99,101
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ESP,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ESP,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,2,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ESP,6,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,FRA,7,1,1,1,2,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ITA,10,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ITA,16,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ITA,18,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ITA,19,5,3,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,ITA,9,2,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_ta_in_tc_o,Check if all the hauls in TA are in TC,MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+rome_hauls_from_tb_in_ta_o,Check if all the hauls in TB are in TA,FRA,7,1,0,0,5,0,0,1,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0
+rome_hauls_from_tb_in_ta_o,Check if all the hauls in TB are in TA,FRA,8,4,0,0,1,1,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,1,0
+rome_hauls_from_tb_in_ta_o,Check if all the hauls in TB are in TA,ITA,11,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_ta_o,Check if all the hauls in TB are in TA,ITA,17,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,1,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,FRA,7,2,1,1,2,1,1,0,0,0,0,0,0,0,0,0,0,1,1,2,1,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,FRA,8,1,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,1,0,0,0,1,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,ITA,10,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,ITA,16,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,ITA,17,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,ITA,18,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,ITA,19,5,3,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,ITA,9,2,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tb_in_tc_o,Check if all the hauls in TB are in TC,MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
+rome_hauls_from_tc_in_ta_o,Check if all the hauls in TC are in TA,ESP,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0
+rome_hauls_from_tc_in_ta_o,Check if all the hauls in TC are in TA,FRA,7,0,0,0,5,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0
+rome_hauls_from_tc_in_ta_o,Check if all the hauls in TC are in TA,FRA,8,3,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2
+rome_hauls_from_tc_in_ta_o,Check if all the hauls in TC are in TA,ITA,11,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_hauls_from_tc_in_ta_o,Check if all the hauls in TC are in TA,ITA,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0,0,0
+rome_hauls_from_tc_in_tb_o,Check if all the hauls in TC are in TB,ESP,1,24,27,33,33,32,39,38,38,44,47,43,38,50,45,42,39,25,28,31,39,52,52
+rome_hauls_from_tc_in_tb_o,Check if all the hauls in TC are in TB,ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,7,7
+rome_hauls_from_tc_in_tb_o,Check if all the hauls in TC are in TB,ESP,5,0,4,4,3,4,4,0,8,4,0,5,4,5,55,55,54,50,57,50,54,57,57
+rome_hauls_from_tc_in_tb_o,Check if all the hauls in TC are in TB,ESP,6,50,75,68,65,56,73,73,77,86,92,80,81,90,64,77,75,53,78,89,97,99,99
+rome_hauls_from_tc_in_tb_o,Check if all the hauls in TC are in TB,FRA,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),CYP,25,0,0,0,0,0,0,0,0,0,0,0,1,0,1,1,0,0,0,0,1,0,26
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ESP,1,1,0,1,1,0,0,1,0,0,0,0,0,2,45,42,39,0,0,0,0,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ESP,5,0,0,0,0,0,0,0,1,0,0,0,0,0,55,55,53,0,0,0,0,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ESP,6,1,0,0,1,0,1,5,1,0,4,1,0,0,64,76,75,0,0,0,2,1,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),FRA,7,1,1,0,0,0,1,1,0,1,2,0,2,1,1,0,0,1,1,0,0,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),FRA,8,0,0,0,0,0,1,0,0,0,0,1,2,0,2,0,0,1,0,1,1,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,21,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),GRC,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,11,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,16,10,1,2,0,0,1,0,1,1,0,6,108,18,18,19,24,9,9,28,14,12,23
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,7,5,7
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,19,0,0,0,0,1,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,1
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),ITA,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0
+rome_num_sex_eq_sum_nb_length_sex_tc_o,Internal check  in TC (the number per sex must be equal to the sum of nb per length per sex),SVN,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,CYP,25,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,3
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ESP,1,0,0,0,0,0,2,0,1,5,2,3,2,2,3,4,1,0,0,2,0,2,5
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ESP,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,2,1,0,5,3
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ESP,6,0,0,1,0,1,0,0,1,2,2,2,0,2,0,1,1,1,2,1,1,2,3
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,FRA,7,2,2,1,2,1,4,3,3,3,3,4,4,6,5,4,8,4,6,5,4,5,5
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,FRA,8,1,3,2,1,2,3,4,3,0,4,4,1,3,2,2,3,2,2,2,3,2,3
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,5,1
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ITA,10,0,3,3,2,2,0,2,1,2,0,2,2,1,0,2,0,0,0,0,1,0,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ITA,11,7,14,8,5,6,4,2,4,3,6,5,3,2,8,4,4,3,0,0,1,0,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ITA,16,1,2,0,1,0,3,1,0,3,2,3,10,0,3,0,3,3,7,4,4,4,8
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ITA,17,0,0,0,0,0,0,0,0,0,2,4,6,4,1,2,2,3,6,3,3,4,3
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ITA,18,1,3,3,1,4,6,5,6,4,5,4,2,2,3,4,3,0,2,0,4,0,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,ITA,9,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+rome_shooting_depth_hauling_depth_same_stratum_ta_o,Start depth and end depth of each haul should be in the same stratum,MLT,15,0,0,0,0,0,0,0,0,0,0,0,3,3,2,1,1,1,5,2,2,1,2
+rome_shooting_eq_hauling_quadrant_o,Check if the haul start in the same quadrant,ESP,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0
+rome_shooting_eq_hauling_quadrant_o,Check if the haul start in the same quadrant,ESP,6,0,1,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0,1,0,0,0,0
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,CYP,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,21,18,0,23
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,FRA,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,66,64,65,64
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,FRA,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,23,23,22
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,0
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,20,0
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,66,68,68,66,67
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,11,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,71,94,96,80
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,111,115,98,50,91
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,126
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,18,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,81,74,80,82,84
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,19,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39,68,65,55,62
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,ITA,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,76
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0
+rome_target_species_from_tb_in_tc_o,Check if all the target species in tb are in tc,SVN,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,CYP,25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,ESP,1,24,27,33,33,32,39,38,38,44,47,43,38,50,45,42,39,25,28,31,39,52,61
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,7,7,7,7
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,ESP,5,0,4,4,3,4,4,0,8,4,0,5,4,5,55,55,54,50,57,50,54,57,56
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,ESP,6,50,75,68,65,56,73,73,77,86,92,80,81,90,64,77,75,53,78,89,97,99,101
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,FRA,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,GRC,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,ITA,16,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2
+rome_species_from_tc_in_tb_o,Check if all the species in tc are in tb,MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,CYP,25,0,0,0,0,0,0,0,0,0,0,0,3,0,1,2,1,0,0,0,0,0,26
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,FRA,7,8,1,1,0,2,3,0,1,0,1,0,0,0,3,0,1,40,3,9,2,0,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,FRA,8,0,0,0,0,0,4,0,1,0,0,0,0,0,0,2,0,3,1,3,3,1,1
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,22,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,42,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,GRC,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,0,1
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,ITA,11,0,2,0,1,0,0,0,1,0,1,0,0,0,1,3,0,1,0,0,0,0,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,ITA,16,0,0,0,0,0,1,0,0,1,47,54,108,93,85,81,95,90,78,94,91,32,77
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,ITA,17,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,9,0,0,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,ITA,19,49,49,50,46,48,47,58,65,55,63,64,66,67,68,69,70,69,70,0,0,0,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,ITA,9,7,12,5,1,0,7,18,4,2,1,1,0,0,0,1,2,0,2,0,1,0,1
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,MLT,15,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,43,7,0,0
+rome_num_sex_raising_tb_o,Check if in case of sub-sampling in TC the number per sex in TB is raised correctly,SVN,17,0,0,1,1,2,0,0,0,2,0,1,0,0,1,0,0,0,2,0,1,1,2
+small_raising_perc_o,Small raising percentages,CYP,25,0,0,0,0,0,0,0,0,0,0,0,5,14,15,11,15,13,14,14,15,0,15
+small_raising_perc_o,Small raising percentages,ESP,1,2,2,1,6,3,1,5,6,11,10,9,7,16,7,3,4,3,1,6,8,2,0
+small_raising_perc_o,Small raising percentages,ESP,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,1,1,2
+small_raising_perc_o,Small raising percentages,ESP,5,0,0,0,0,0,0,0,4,1,0,1,0,1,11,9,7,12,7,9,16,10,12
+small_raising_perc_o,Small raising percentages,ESP,6,2,6,4,8,2,11,15,8,14,6,19,26,23,5,8,9,11,11,5,12,14,25
+small_raising_perc_o,Small raising percentages,FRA,7,21,18,17,3,21,37,39,39,35,25,47,49,45,37,31,28,32,34,13,16,20,11
+small_raising_perc_o,Small raising percentages,FRA,8,5,4,2,0,3,8,6,11,0,13,17,13,13,10,16,15,15,16,11,10,11,12
+small_raising_perc_o,Small raising percentages,GRC,20,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0
+small_raising_perc_o,Small raising percentages,GRC,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,44,0
+small_raising_perc_o,Small raising percentages,GRC,23,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0
+small_raising_perc_o,Small raising percentages,HRV,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,11,4,13
+small_raising_perc_o,Small raising percentages,ITA,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0
+small_raising_perc_o,Small raising percentages,ITA,11,17,13,21,12,13,47,27,44,14,30,27,30,25,24,26,16,21,14,6,11,7,11
+small_raising_perc_o,Small raising percentages,ITA,16,7,5,2,0,2,5,3,1,0,0,1,6,12,1,7,7,17,3,10,8,6,8
+small_raising_perc_o,Small raising percentages,ITA,17,0,0,0,0,0,0,0,0,5,8,13,4,6,0,0,0,0,0,34,45,42,54
+small_raising_perc_o,Small raising percentages,ITA,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+small_raising_perc_o,Small raising percentages,ITA,9,1,4,1,0,0,0,0,0,0,0,0,3,2,1,6,1,2,0,0,7,0,0
+small_raising_perc_o,Small raising percentages,MLT,15,0,0,0,0,0,0,0,0,0,0,0,9,8,5,9,15,10,12,7,2,4,0
+small_raising_perc_o,Small raising percentages,SVN,17,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
